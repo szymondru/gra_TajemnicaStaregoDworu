@@ -30,7 +30,7 @@ def wybor(odpowiedz):
         while odpowiedz not in odpowiedzi:
             print('\n\r'
                   'Podana przez Ciebie odpowiedź jest niepoprawna. Jeśli chcesz zakończyć grę, wpisz: \"exit\". ')
-            odpowiedz.flush() = input('\n\r'
+            odpowiedz = input('\n\r'
                               'Wpisz poprawną odpowiedź (tak/nie), aby kontynuować grę : ').strip().lower()
         return odpowiedzi[odpowiedz]
     except Exception as blad:
