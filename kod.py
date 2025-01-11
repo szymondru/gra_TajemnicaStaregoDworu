@@ -12,24 +12,25 @@ import random
 import time
 
 
+
 # Funkcje
 
 def dalej():
     time.sleep(3)
-    input('\nWciśnij "Enter", aby przejść dalej. \n')
+    input('\n\rWciśnij "Enter", aby przejść dalej. \n')
 
 def wybor(odpowiedz):
     try:
         odpowiedz = odpowiedz.strip().lower()
         if odpowiedz == 'exit':
-            print('\n'
-                  'Postanawiasz zakończyć grę. \n\nKONIEC GRY\n\n')
-            exit()
+            print('\n\r'
+                  'Postanawiasz zakończyć grę.')
+            koniec()
         odpowiedzi = {'tak': True, 't': True, 'nie': False, 'n': False}
         while odpowiedz not in odpowiedzi:
-            print('\n'
+            print('\n\r'
                   'Podana przez Ciebie odpowiedź jest niepoprawna. Jeśli chcesz zakończyć grę, wpisz: \"exit\". ')
-            odpowiedz = input('\n'
+            odpowiedz.flush() = input('\n\r'
                               'Wpisz poprawną odpowiedź (tak/nie), aby kontynuować grę : ').strip().lower()
         return odpowiedzi[odpowiedz]
     except Exception as blad:
@@ -39,12 +40,10 @@ def wybor(odpowiedz):
 koniec_gry = False
 
 def wahanie_koniec_gry(odpowiedz):
-    odpowiedz = input('\n'
+    odpowiedz = input('\n\r'
                       'Po chwili zaczynasz mieć wątpliwości co do ostatniej decyzji. Czy chcesz ją zmienić?: ')
-    odpowiedz = wybor(odpowiedz)
-    if odpowiedz:
-        print('\n'
-              'Zmieniasz swój wybór. ')
+    if wybor(odpowiedz):
+        print('\n\rZmieniasz swój wybór. ')
         time.sleep(2)
         print('Gra toczy się dalej. ')
         time.sleep(2)
@@ -54,32 +53,29 @@ def wahanie_koniec_gry(odpowiedz):
 
 def koniec():
     time.sleep(2)
-    print('\n\nKONIEC GRY\n\n')
+    print('\n\n\rKONIEC GRY\n\n')
     time.sleep(2)
-    input(' \nWciśnij "Enter", aby zakończyć grę. \n ')
+    input(' \n\rWciśnij "Enter", aby zakończyć grę. \n ')
     exit()
 
 
 
-# Funkcje zawierające instrukcje 3 głównych etapów gry i bardziej skomplikowanych 
-# możliwości wewnątrz nich
+# Funkcje zawierające instrukcje 3 głównych etapów gry i bardziej skomplikowanych możliwości wewnątrz nich
 
 # ETAP 1: Droga do Starego Dworu
 
 def etap1():
-    odpowiedz = input('\n'
-        'Podczas drogi do dworu napotykasz rozwidlenie dróg. '
-        'Jedna ścieżka prowadzi przez ciemny las, druga jest dłuższa, ale bardziej uczęszczana. '
-        '\nCo robisz? Czy wybierasz ścieżkę prowadzącą w lewo (w stronę ciemnego lasu)?: ')
-    odpowiedz = wybor(odpowiedz)
-    if odpowiedz:
+    odpowiedz = input('\n\rPodczas drogi do dworu napotykasz rozwidlenie dróg. '
+                      'Jedna ścieżka prowadzi przez ciemny las, druga jest dłuższa, ale bardziej uczęszczana. '
+                      '\nCo robisz? Czy wybierasz ścieżkę prowadzącą w lewo (w stronę ciemnego lasu)?: ')
+    if wybor(odpowiedz):
         if random.choice([True, False]):
-            print('\n'
+            print('\n\r'
                   'Ścieżka prowadzi przez mroczny las, ale udaje Ci się dotrzeć do dworu bez problemów.')
         else:
             walka_ze_zwierzeciem()     
     else:
-        print('\n'
+        print('\n\r'
               'Zdecydowałeś się wybrać dłuższą, ale bardziej bezpieczną drogę. '
               'Mimo że podróżujesz wolniej, jesteś pewniejszy, że dojdziesz do celu bez większych problemów. '
               'Po pewnym czasie dostrzegasz zarys starego dworu. ')            
@@ -88,32 +84,30 @@ def etap1():
 # ETAP 1: Ewentualna walka ze zwierzęciem
 
 def walka_ze_zwierzeciem():
-    odpowiedz = input('\n'
+    odpowiedz = input('\n\r'
         'W drodze do rozwidlenia natrafiasz na dzikie zwierzę, które stanowi realne zagrożenie. '
         'Zwierzę wyłania się zza drzew i rusza w Twoją stronę. Czy próbujesz je odstraszyć?: ')
     time.sleep(2)
-    odpowiedz = wybor(odpowiedz)
-    if odpowiedz:
-        print('\n'
+    if wybor(odpowiedz):
+        print('\n\r'
               'Walczysz z dzikim zwierzęciem, które próbuje Cię zaatakować.')
         time.sleep(3)
-        print('\n'
+        print('\n\r'
               'Udało Ci się odstraszyć zwierzę, używając ostrego kamienia i swojego instynktu. '
               'Wracasz na właściwą drogę, ale straciłeś sporo czasu.')
     else:
-        print('\n'
+        print('\n\r'
               'Zwierzę zaatakowało Cię, zmuszając Cię do ucieczki. '
               'Straciłeś cenny czas, ale udało Ci się przeżyć. Decydujesz się wrócić na początek ścieżki i pójść drugą trasą.')
-        odpowiedz = input('\n'
+        odpowiedz = input('\n\r'
                           'Docierasz ponownie do rozwidlenia. '
                           'Czy podejmujesz się dalszej próby poszukiwania Dziedzica?: ')
         if wybor(odpowiedz):
-            print('\n'
-                  'Wyruszasz w dalszą podróż. ')
+            print('\n\rWyruszasz w dalszą podróż. ')
         else:
             wahanie_koniec_gry(odpowiedz)
             if koniec_gry:
-                print('\n'
+                print('\n\r'
                 'Po ciężkim starcie z dzikim zwierzęciem postanawiasz wrócić do domu. '
                 'Tajemnica pozostaje nierozwiązana. ')
                 koniec()
@@ -123,8 +117,7 @@ def walka_ze_zwierzeciem():
 # ETAP 2: Stary Dwór
 
 def etap2():
-    odpowiedz = input(
-        '\n'
+    odpowiedz = input('\n\r'
         'W końcu docierasz do Starego Dworu. Mimo że z zewnątrz wygląda na opuszczony, w środku czuć tajemniczy klimat. '
         'Ciężkie powietrze, zapach stęchlizny i ciche odgłosy dochodzące z piwnicy sprawiają, że zaczynasz się niepokoić. '
         'Zauważasz dwie drogi: jedna prowadzi w dół, do piwnicy, a druga na górę, do zapomnianych pokoi na piętrze. '
@@ -234,7 +227,6 @@ print('\n'
     'tajemnic i nieoczekiwanych decyzji. \n\nW trakcie gry odpowiadaj na pytania: (tak/nie). \n'
     'Jeśli postanowisz przedwcześnie zakończyć grę, wpisz: \"exit\". \n\n')
 dalej()
-
 odpowiedz = input('\n'
     'Otrzymujesz list od nieznanego nadawcy, który prosi Cię o pomoc w rozwiązaniu zagadki zniknięcia '
     'dziedzica starego dworu. Podobno od czasu jego zniknięcia dwór opustoszał, a w okolicznych wsiach '
