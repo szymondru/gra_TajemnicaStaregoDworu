@@ -70,7 +70,7 @@ def etap1():
               'Po pewnym czasie dostrzegasz zarys starego dworu. ')            
     dalej()
 
-# ETAP 1: Ewentualna walka ze zwierzęciem
+# ETAP 1a: Ewentualna walka ze zwierzęciem
 
 def walka_ze_zwierzeciem():
     odpowiedz = input('\n\r'
@@ -121,7 +121,7 @@ def etap2():
     else:
         obraz()
 
-# ETAP 2: Dziennik
+# ETAP 2a: Dziennik
 
 def dziennik():
     print('\n'
@@ -133,7 +133,7 @@ def dziennik():
     dalej()
     etap3()
 
-# ETAP 2: Obraz
+# ETAP 2b: Obraz
 
 def obraz():
     odpowiedz = input('\n'
@@ -157,7 +157,7 @@ def obraz():
             'Postanawiasz wrócić do domu. Tajemnica pozostaje nierozwiązana. ')
             koniec()
 
-# Etap 2: Tajemniczy nieznajomy
+# Etap 2c: Tajemniczy nieznajomy
 
 def czlowiek():
     odpowiedz = input('\n'
