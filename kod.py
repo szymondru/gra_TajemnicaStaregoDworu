@@ -1,19 +1,7 @@
-# TAJEMNICA STAREGO DWORU
-# Gra tekstowa, w której wcielasz się w postać młodego detektywa, który otrzymuje tajemniczy list, 
-# w którym nieznany nadawca prosi go o pomoc w rozwiązaniu zagadki zniknięcia dziedzica Starego Dworu. 
-# Dwór, ukryty głęboko w lesie, skrywa mroczne sekrety, które tylko Ty możesz odkryć. 
-# Musisz podjąć decyzje, które wpłyną na dalszy rozwój fabuły. 
-# Czy uda Ci się rozwiązać zagadkę i odnaleźć dziedzica? 
-# To zależy od Twoich wyborów.
-
-
-
 import random
 import time
 
 
-
-# Funkcje
 
 def dalej():
     time.sleep(3)
@@ -60,7 +48,8 @@ def koniec():
 
 
 
-# Funkcje zawierające instrukcje 3 głównych etapów gry i bardziej skomplikowanych możliwości wewnątrz nich
+# Funkcje zawierające instrukcje 3 głównych etapów gry i bardziej skomplikowanych możliwości 
+# rozwoju fabuły wewnątrz nich.
 
 # ETAP 1: Droga do Starego Dworu
 
